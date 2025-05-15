@@ -8,7 +8,9 @@ pipeline {
 
     stages {
         stage('clone Repo') {
-            https://github.com/MAHUL25/WebCoders.git
+            steps {
+                git 'https://github.com/MAHUL25/WebCoders.git'
+            }
         }
 
         stage('Install Frontend Dependencies') {
