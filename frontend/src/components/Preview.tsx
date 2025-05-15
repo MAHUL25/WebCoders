@@ -6,7 +6,7 @@ interface PreviewProps {
 
 const Preview = ({html}: PreviewProps) => {
     return (
-        <iframe sandbox='allow-scripts' srcDoc={html} title='Live Preview' style={{width: '100%', height: '100%', border: 'none'}} />
+        <iframe sandbox='allow-scripts' srcDoc={html} title='Live Preview' className='w-full h-[95%] bg-white round-lg'/>
     )
 }
 

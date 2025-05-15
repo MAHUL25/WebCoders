@@ -11,7 +11,7 @@ const CodeEditor = ({language, value, onChange}: EditorProps) => {
     return (
         <div>
             <Editor 
-            height="300px" 
+            height="300px"
             theme="vs-dark" 
             language={language} 
             value={value} 
