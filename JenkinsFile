@@ -4,10 +4,11 @@ pipeline {
     environment {
         REACT_DIR = 'frontend'
         FLASK_DIR = 'backend'
+        VENV_DIR = 'env'  // Virtual environment directory inside backend
     }
 
     stages {
-        stage('clone Repo') {
+        stage('Clone Repository') {
             steps {
                 git branch: 'main', url: 'https://github.com/MAHUL25/WebCoders.git'
             }
@@ -29,20 +30,37 @@ pipeline {
             }
         }
 
-        stage('Install Backend Dependencies') {
+        stage('Setup Python Virtual Environment and Install Backend Dependencies') {
             steps {
                 dir("${FLASK_DIR}") {
-                    bat 'pip install -r requirements.txt'
+                    bat '''
+                        python -m pip install --upgrade pip
+                        pip install virtualenv
+                        python -m venv env
+                        call env\\Scripts\\activate.bat && pip install -r requirements.txt
+                    '''
                 }
             }
         }
 
-        stage('Run Backend Server') {
+        stage('Run Flask Backend Server') {
             steps {
                 dir("${FLASK_DIR}") {
-                    bat 'nohup python3 app.py'
+                    bat '''
+                        call env\\Scripts\\activate.bat
+                        start /B python app.py
+                    '''
                 }
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build and server startup completed successfully.'
+        }
+        failure {
+            echo 'Build failed. Please check the stage logs.'
         }
     }
 }
