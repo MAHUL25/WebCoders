@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    enviroment {
+        REACT_DIR = 'frontend'
+        FLASK_DIR = 'backend'
+    }
+
+    stages {
+        stage('clone Repo') {
+            https://github.com/MAHUL25/WebCoders.git
+        }
+
+        stage('Install Frontend Dependencies') {
+            steps {
+                dir("${REACT_DIR}") {
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                dir("${REACT_DIR}") {
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Install Backend Dependencies') {
+            steps {
+                dir("${FLASK_DIR}") {
+                    sh 'pip install -r requirements.txt'
+                }
+            }
+        }
+
+        stage('Run Backend Server') {
+            steps {
+                dir("${FLASK_DIR}") {
+                    sh 'nohup python3 app.py'
+                }
+            }
+        }
+    }
+}
