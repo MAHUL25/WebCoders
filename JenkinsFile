@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    enviroment {
+    environment {
         REACT_DIR = 'frontend'
         FLASK_DIR = 'backend'
     }
