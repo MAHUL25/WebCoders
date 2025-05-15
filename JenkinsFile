@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('clone Repo') {
             steps {
-                git 'https://github.com/MAHUL25/WebCoders.git'
+                git branch: 'main', url: 'https://github.com/MAHUL25/WebCoders.git'
             }
         }
 
