@@ -1,6 +1,8 @@
 import React from 'react'
 import { FaGithub, FaCode } from "react-icons/fa"
 import { GiFoxHead } from "react-icons/gi"
+import { BsMicrosoft } from "react-icons/bs";
+import { SiAdobe } from "react-icons/si";
 
 const hero = () => {
   return (
@@ -48,6 +50,14 @@ const hero = () => {
             <div className='flex items-center space-x-2'>
                 <span>FOX HUB</span>
                 <GiFoxHead />
+            </div>
+            <div className='flex items-center space-x-2'>
+                <span>Microsoft</span>
+                <BsMicrosoft />
+            </div>
+            <div className='flex items-center space-x-2'>
+                <span>Adobe</span>
+                <SiAdobe />
             </div>
         </div>
     </div>
