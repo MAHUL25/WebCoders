@@ -1,6 +1,6 @@
-import React from 'react'
 import Navbar from '../components/navbar';
 import Hero from '../components/hero';
+import Monitors from '../components/monitors';
 
 const home = () => {
     const languages = [
@@ -13,9 +13,10 @@ const home = () => {
         { name: "Bash", desc: "Command-line scripting." },
     ];
     return (
-        <div className='bg-[#181818] h-screen relative overflow-hidden'>
+        <div className='bg-[#181818] min-h-screen relative overflow-x-hidden overflow-y-auto no-scrollbar'>
             <Navbar />
             <Hero />
+            <Monitors />
         </div>
     )
 }
