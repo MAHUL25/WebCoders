@@ -3,7 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const Monitors = () => {
   const handleNavigate = () => {
-    window.location.href = '/signin';
+    window.location.href = '/htmlEditor';
   };
 
   return (
@@ -26,11 +26,8 @@ const Monitors = () => {
         <button className="bg-[#282828] text-lg font-semibold px-6 py-3 rounded-md border border-white hover:bg-[#333333] transition">
           Learn more concepts
         </button>
-        <button
-          onClick={handleNavigate}
-          className="bg-[#282828] text-lg font-semibold px-6 py-3 rounded-md border-2 border-[#d4d4d4] hover:bg-[#383838] flex items-center transition"
-        >
-          Try now, it's free
+        <button onClick={handleNavigate} className="bg-[#282828] cursor-pointer text-lg font-semibold px-6 py-3 rounded-md border-2 border-[#d4d4d4] hover:bg-[#383838] flex items-center transition">
+          Try WebCoders for free
           <FaArrowRight className="ml-2" />
         </button>
       </div>
