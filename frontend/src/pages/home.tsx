@@ -14,6 +14,7 @@ const home = () => {
     ];
     return (
         <div className='bg-[#181818] min-h-screen relative overflow-x-hidden overflow-y-auto no-scrollbar'>
+            <p className='testing'>Hello</p>
             <Navbar />
             <Hero />
             <Monitors />

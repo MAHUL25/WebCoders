@@ -3,7 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const Monitors = () => {
   const handleNavigate = () => {
-    window.location.href = '/htmlEditor';
+    window.location.href = '/signin';
   };
 
   return (

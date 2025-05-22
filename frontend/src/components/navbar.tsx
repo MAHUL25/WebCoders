@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const navbar = () => {
     const navigate = useNavigate();
     const handleNavigate = () => {
-        navigate('/htmlEditor');
+        navigate('/signin');
     }
 
     return (
